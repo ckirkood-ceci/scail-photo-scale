@@ -7,7 +7,7 @@ Take a photograph with a reference object next to the thing you want to measure.
 ## What to use as a reference
 
 - **No printer:** known-size ID-1 bank card (85.60 × 53.98 mm), measured wallet, rectangle drawn on plain paper using a ruler, or verified grid paper.
-- **Available printer:** included 30 mm ArUco marker; confirm printed size with a ruler.
+- **Available printer:** optional ArUco marker for automatic recognition (generate with OpenCV; confirm physical size with a ruler). The printable PDF is included in the separately packaged beta ZIP, not yet in this GitHub repository.
 - **Only a coin:** US quarter (24.26 mm diameter); near-overhead approximation **without perspective correction**.
 - **Larger items:** A4 or US Letter paper, check the sheet is untrimmed and not distorted.
 
