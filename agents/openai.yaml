@@ -1,0 +1,3 @@
+interface:
+  display_name: "scAIl Photo Scale"
+  short_description: "Measure objects in photos using everyday physical references, no printer required."

@@ -1,0 +1,31 @@
+# Field guide — choose a reference, make the photo
+
+## No printer is the normal path
+
+**Quickest:** If an untrimmed, flat ID-1 bank card (85.60 × 53.98 mm) is handy, place it on the same flat surface as the target. Cover or turn over identity and payment details before photographing. Use only the actual card edge, not a larger wallet/case. Photograph the full card corners, target and two target endpoints; rounded corners add some selection uncertainty.
+
+**Ruler plus writable surface:** Draw a measurable rectangle on a rigid card or paper taped flat to something rigid. First use `scripts/pattern_guide.py`, with the actual surface dimensions in mm, and optionally the *measured* graph-paper grid spacing. Use your ruler to mark top/bottom lengths and vertical heights, connect the marks with straightedges, verify both diagonals are nearly equal. Shade a small inset square inside top-left and a short distinct mark inside top-right so the image has obvious orientation. Avoid covering corner intersections. Use manual quad points in `scripts/measure.py`; do not claim the hand-drawn pattern is an ArUco code.
+
+**Graph paper:** Verify the grid spacing with ruler first; common grids vary by country/manufacturer. Use integer cell counts for measured width and height. If grid paper has stretched/copied/uneven squares, measure the resulting final rectangle with a ruler instead.
+
+**Tape on a case:** Use non-stretch paper tape and a straight, flat case panel; check dimensions *after* adhesion (tape may stretch). Avoid controls, microphones, ports, magnetic attachment surfaces, and sensitive labels. Do not assume a case is the same dimensions as the device inside.
+
+**Coin:** For U.S. quarter, use a 24.26 mm diameter; photograph near-perpendicular to the same plane. It is only a rough scale; do not infer projective homography from a circle alone. Oblique camera → retake or choose rectangle.
+
+## Optional printed ArUco
+
+`assets/scail_marker_actual_size.pdf` contains a 30 mm black ArUco 4x4_50 marker ID 23 and a 50 mm ruler sanity check. Print at 100% Actual Size, measure both before use, and keep the printed white margin. Printed marker isn't mandatory.
+
+## Calibration checks
+
+- Custom profile: record actual width, height, which face you measure, and how measured. A saved profile DOES NOT automatically recognize that item later. Agent still chooses corners on each photo.
+- Photograph a physical ruler beside reference and use software to measure an actual 50 mm segment. Document the observed absolute/relative error instead of claiming some generic ±1% or ±3%.
+- Measure at two camera angles; large disagreement means the reference and target aren't coplanar or the picked points are poor.
+- The photo and reference should be the same physical plane; a 2D projective map cannot account for protrusions from that plane.
+- Pixel references must use original image pixel coordinates. Image viewers that reorient, crop or resize require updating the coordinates.
+
+## Starter prompts
+
+- "I have graph paper and a ruler, but no printer. Make a reference pattern for a 3x5 inch card."
+- "I have a wallet that measures 88 by 56 mm. Save a reference profile; then measure a screw spacing in this photo."
+- "Measure this board segment with the credit card lying next to it. Mark the endpoints and say what could skew the result."
